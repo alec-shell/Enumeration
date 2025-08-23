@@ -1,0 +1,4 @@
+com\EnumerationClasses\Scraper.class
+EbayCrawler\EbayCrawler.class
+com\EnumerationClasses\Crawler.class
+SubdomainCrawler\SubdomainCrawler.class
