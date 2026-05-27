@@ -154,7 +154,7 @@ Implement scrape()
 Use getScraper().getBody(url)
 Parse and extract data using Jsoup.
 Add new URLs to the queue as needed
-Example
+##### Example
 ```java
 public class MyCrawler extends Crawler {
 
