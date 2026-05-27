@@ -28,9 +28,6 @@ Responsible for:
 - Crawl orchestration
 - Delegating page-specific scraping logic to subclasses
 
-**Core idea:**  
-> The framework handles traversal; subclasses define what to do with each page.
-
 ---
 
 ### 2. `Scraper` (HTTP Layer)
