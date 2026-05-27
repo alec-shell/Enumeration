@@ -138,23 +138,13 @@ Crawler → traversal logic
 Scraper → networking layer
 Subclasses → domain-specific parsing
 
-### Limitations
-No robots.txt handling
-No retry/backoff mechanism
-Single-threaded execution
-Fixed sleep-based rate limiting
-eBay DOM selectors may break if site changes
-No persistence layer (all data is printed only)
-
-Extending the Framework
-
-#### To create a new crawler:
+### To create a new crawler:
 Extend Crawler
 Implement scrape()
 Use getScraper().getBody(url)
 Parse and extract data using Jsoup.
 Add new URLs to the queue as needed
-##### Example
+### Example
 ```java
 public class MyCrawler extends Crawler {
 
