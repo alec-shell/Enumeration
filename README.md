@@ -106,6 +106,7 @@ Features:
 ```java
 EbayCrawler crawler = new EbayCrawler();
 crawler.start("macbook", "air", "2020", "m1");
+```
 Behavior
 Builds eBay search URL:
 https://www.ebay.com/sch/i.html?_nkw=macbook+air+2020+m1
@@ -134,6 +135,7 @@ Jsoup
     <artifactId>jsoup</artifactId>
     <version>1.17.2</version>
 </dependency>
+
 Design Highlights
 BFS traversal ensures broad page coverage before depth expansion
 Abstract scrape() enables reusable crawling across domains
@@ -141,6 +143,7 @@ Clear separation of concerns:
 Crawler → traversal logic
 Scraper → networking layer
 Subclasses → domain-specific parsing
+
 Limitations
 No robots.txt handling
 No retry/backoff mechanism
@@ -148,7 +151,9 @@ Single-threaded execution
 Fixed sleep-based rate limiting
 eBay DOM selectors may break if site changes
 No persistence layer (all data is printed only)
+
 Extending the Framework
+
 To create a new crawler:
 Extend Crawler
 Implement scrape()
@@ -156,6 +161,7 @@ Use getScraper().getBody(url)
 Parse and extract data using Jsoup
 Add new URLs to the queue as needed
 Example
+```java
 public class MyCrawler extends Crawler {
 
     @Override
@@ -169,5 +175,6 @@ public class MyCrawler extends Crawler {
         // custom parsing logic here
     }
 }
+```
 License
 This project is intended for educational and personal use.
