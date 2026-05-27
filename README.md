@@ -32,12 +32,12 @@ Responsible for:
 
 ### 2. `Scraper` (HTTP Layer)
 
-Responsible for:
+#### Responsible for:
 - Making HTTP requests
 - Returning raw HTML responses
 - Handling timeouts and connection configuration
 
-Uses:
+#### Uses:
 - Java `HttpClient`
 - Browser-like User-Agent header for compatibility
 
@@ -107,18 +107,18 @@ Features:
 EbayCrawler crawler = new EbayCrawler();
 crawler.start("macbook", "air", "2020", "m1");
 ```
-Behavior
-Builds eBay search URL:
+#### Behavior
+##### Builds eBay search URL:
 https://www.ebay.com/sch/i.html?_nkw=macbook+air+2020+m1
-Crawls pagination links:
+##### Crawls pagination links:
 a.pagination__item
-Extracts product listings:
+##### Extracts product listings:
 div.su-card-container__content
 Filters results using search terms
 Prints matching items (description + price)
 Scraping Logic Notes
 Link Extraction
-New URLs are added to the queue if not visited:
+##### New URLs are added to the queue if not visited:
 if (!getVisited().contains(link) && !getQueue().contains(link)) {
     getQueue().add(link);
 }
@@ -126,7 +126,7 @@ Item Filtering
 Each product is filtered by search terms:
 if (!desc.contains(term.toLowerCase())) continue;
 
-Dependencies
+### Dependencies
 Java Version
 Java 11+
 Jsoup
@@ -136,7 +136,7 @@ Jsoup
     <version>1.17.2</version>
 </dependency>
 
-Design Highlights
+### Design Highlights
 BFS traversal ensures broad page coverage before depth expansion
 Abstract scrape() enables reusable crawling across domains
 Clear separation of concerns:
@@ -144,7 +144,7 @@ Crawler → traversal logic
 Scraper → networking layer
 Subclasses → domain-specific parsing
 
-Limitations
+### Limitations
 No robots.txt handling
 No retry/backoff mechanism
 Single-threaded execution
@@ -154,7 +154,7 @@ No persistence layer (all data is printed only)
 
 Extending the Framework
 
-To create a new crawler:
+#### To create a new crawler:
 Extend Crawler
 Implement scrape()
 Use getScraper().getBody(url)
@@ -176,5 +176,5 @@ public class MyCrawler extends Crawler {
     }
 }
 ```
-License
+#### License
 This project is intended for educational and personal use.
