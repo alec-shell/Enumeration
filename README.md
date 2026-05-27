@@ -1,4 +1,5 @@
-# Domain Crawler Framework (Java)
+# Enumeration
+## Domain Crawler Framework (Java)
 
 A lightweight, extensible domain crawling framework built in Java using a BFS-style crawler architecture. It supports pluggable scraping logic and can be adapted to different domains (e-commerce, search engines, etc.). An example implementation is included for scraping eBay search results.
 
