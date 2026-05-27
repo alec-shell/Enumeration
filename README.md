@@ -152,7 +152,7 @@ Extending the Framework
 Extend Crawler
 Implement scrape()
 Use getScraper().getBody(url)
-Parse and extract data using Jsoup
+Parse and extract data using Jsoup.
 Add new URLs to the queue as needed
 Example
 ```java
