@@ -57,15 +57,6 @@ Responsible for:
 
 ---
 
-## Project Structure
-com.EnumerationClasses
-├── Crawler.java (abstract BFS crawler)
-├── Scraper.java (HTTP client wrapper)
-EbayCrawler
-└── EbayCrawler.java (example implementation)
-
----
-
 ## Crawler API
 
 ### `crawl(String seed)`
@@ -125,6 +116,8 @@ if (!getVisited().contains(link) && !getQueue().contains(link)) {
 Item Filtering
 Each product is filtered by search terms:
 if (!desc.contains(term.toLowerCase())) continue;
+
+---
 
 ### Dependencies
 Java Version
